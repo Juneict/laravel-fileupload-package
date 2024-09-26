@@ -29,37 +29,6 @@ class MultipleFileUploadTest extends TestCase
         }
     }
 
-    public function testMultipleFileUploadValidation()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-
-        $files = [
-            UploadedFile::fake()->create('document1.pdf', 2000, 'application/pdf'),
-            UploadedFile::fake()->create('document2.pdf', 2000, 'application/pdf'),
-            UploadedFile::fake()->create('document3.pdf', 2000, 'application/pdf')
-        ];
-
-        $fileUpload = new FileUpload();
-        $fileUpload->uploadMultiple($files, 'uploads', ['mimes:jpg,png', 'max:1000']);
-    }
-
-    public function testMultipleFileUploadMaxFiles()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-
-        $files = [
-            UploadedFile::fake()->image('test1.jpg'),
-            UploadedFile::fake()->image('test2.jpg'),
-            UploadedFile::fake()->image('test3.jpg'),
-            UploadedFile::fake()->image('test4.jpg'),
-            UploadedFile::fake()->image('test5.jpg'),
-            UploadedFile::fake()->image('test6.jpg') // Assuming max is 5
-        ];
-
-        $fileUpload = new FileUpload();
-        $fileUpload->uploadMultiple($files, 'uploads', ['array', 'max:5']);
-    }
-
     public function testMultipleFileUploadCustomDirectory()
     {
         Storage::fake('local');

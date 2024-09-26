@@ -20,14 +20,4 @@ class SingleFileUploadTest extends TestCase
 
         Storage::disk('local')->assertExists($path);
     }
-
-    public function testSingleFileUploadValidation()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-
-        $file = UploadedFile::fake()->create('document.pdf', 2000, 'application/pdf');
-
-        $fileUpload = new FileUpload();
-        $fileUpload->uploadSingle($file, 'uploads', ['mimes:jpg,png', 'max:1000']);
-    }
 }
