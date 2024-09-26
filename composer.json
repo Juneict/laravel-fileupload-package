@@ -1,0 +1,45 @@
+{
+    "name": "file-upload-package/laravel-file-upload",
+    "description": "A Laravel package for easy file uploads with validation",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "June Moe Nyi Nyi",
+            "email": "junemoenyinyiict@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^8.0|^9.0|^10.0",
+        "illuminate/http": "^8.0|^9.0|^10.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0|^7.0|^8.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FileUploadPackage\\FileUpload\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FileUploadPackage\\FileUpload\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FileUploadPackage\\FileUpload\\FileUploadServiceProvider"
+            ],
+            "aliases": {
+                "FileUpload": "FileUploadPackage\\FileUpload\\Facades\\FileUpload"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "keywords": ["laravel", "file-upload", "validation", "multi-file", "image-upload"],
+    "homepage": "https://github.com/Juneict/laravel-fileupload-package"
+}
