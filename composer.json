@@ -1,6 +1,6 @@
 {
     "name": "file-upload-package/laravel-file-upload",
-    "description": "A Laravel package for easy file uploads with validation",
+    "description": "A Laravel package for easy file uploads",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -40,6 +40,6 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "keywords": ["laravel", "file-upload", "validation", "multi-file", "image-upload"],
+    "keywords": ["laravel", "file-upload", "multi-file", "image-upload"],
     "homepage": "https://github.com/Juneict/laravel-fileupload-package"
 }

@@ -46,3 +46,8 @@ $post->files =  FileUpload::uploadMultiple($request->file('files'));
 
 $post->save();
 ```
+
+### 3- Old File Delete
+```php
+$fileUpload->oldFileDelete($oldFilePath);
+```

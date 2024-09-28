@@ -4,7 +4,6 @@ namespace FileUploadPackage\FileUpload;
 
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 
 class FileUpload
 {
@@ -32,5 +31,20 @@ class FileUpload
         }
 
         return $paths;
+    }
+
+     /**
+     * Delete the old file from storage.
+     *
+     * @param string $oldFilePath
+     * @return bool
+     */
+    public function oldFileDelete(string $oldFilePath)
+    {
+        if (Storage::disk($this->config['disk'])->exists($oldFilePath)) {
+            return Storage::disk($this->config['disk'])->delete($oldFilePath);
+        }
+
+        return false;
     }
 }
